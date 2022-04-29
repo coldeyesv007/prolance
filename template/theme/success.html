@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get">
+    {{ filtered_persons.form.as_p }}
+    <input type="submit" value="press">
+</form>
+
+
+{% for person in filtered_persons.qs %}
+<h2>{{ person.wage}}</h2><br>
+<h2>{{ person.gender}}</h2><br>
+<h2>{{ person.job}}</h2><br>
+<h2>{{ person.jobtype}}</h2><br>
+<h2>{{ person.address}}</h2><br>
+{% endfor %}
+</body>
+</html>

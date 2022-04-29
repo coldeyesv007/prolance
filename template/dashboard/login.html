@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <title>Prolancer</title>
+<!-- loader-->
+  <link rel='stylesheet' href="{% static 'dashboard/assets/css/pace.min.css'  %}">
+  <script src="{% static 'dashboard/assets/js/pace.min.js' %}"></script>
+  <!--favicon-->
+  <link rel="icon" href="{% static 'dashboard/assets/images/cropped-thumbnail-dashboard.png' type='image/x-icon' %}">
+
+  <!-- Bootstrap core CSS-->
+  <link rel="stylesheet" href="{% static 'dashboard/assets/css/bootstrap.min.css' %}" >
+  <!-- animate CSS-->
+  <link rel="stylesheet" href="{% static 'dashboard/assets/css/animate.css' %}"  type="text/css">
+  <!-- Icons CSS-->
+  <link rel="stylesheet" href="{% static 'dashboard/assets/css/icons.css' %}"  type="text/css">
+
+  <!-- Custom Style-->
+  <link rel="stylesheet" href="{% static 'dashboard/assets/css/app-style.css' %}">
+
+  
+</head>
+
+<body class="bg-theme bg-theme1">
+
+<!-- start loader -->
+   <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
+   <!-- end loader -->
+
+<!-- Start wrapper-->
+ <div id="wrapper">
+
+ <div class="loader-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+	<div class="card card-authentication1 mx-auto my-5">
+		<div class="card-body">
+		 <div class="card-content p-2">
+		 	<div class="text-center">
+				<a href="/home">
+		 		<img src="{% static 'dashboard/assets/images/logo1.png' alt='logo icon' %}"></a>
+		 	</div>
+
+		  <div class="card-title text-uppercase text-center py-3">Update</div>
+
+             <form action="emporgupdate" method="post" enctype="multipart/form-data">
+				 {% csrf_token %}
+
+                 <div class="form-group">
+			  <label  class="sr-only">FirstName</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newfirstname" placeholder="FirstName" required>
+				  <div class="form-control-position">
+					  <i class="icon-user"></i>
+				  </div>
+			   </div>
+			  </div>
+
+            <div class="form-group">
+			  <label  class="sr-only">LastName</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newlastname" placeholder="LastName" required>
+				  <div class="form-control-position">
+					  <i class="icon-user"></i>
+				  </div>
+			   </div>
+			  </div>
+                 <div class="form-group">
+			  <label  class="sr-only">Email</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newemail" placeholder="Email" required>
+				  <div class="form-control-position">
+					 <i class="icon-envelope-open" aria-hidden="true"></i>
+				  </div>
+			   </div>
+			  </div>
+                 <div class="form-group">
+			  <label  class="sr-only">Mobile</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newmobile" placeholder="Mobile" required>
+				  <div class="form-control-position">
+					  <i class="icon-phone"></i>
+				  </div>
+			   </div>
+			  </div>
+                 <div class="form-group">
+			  <label  class="sr-only">Gender</label>
+			   <div class="position-relative has-icon-right">
+				 <select   class="form-control input-shadow" name="egender"  required>
+					  <option selected disabled="true" class="form-control input-shadow">Gender</option>
+					  <option value="male">Male</option>
+					  <option value="female">Female</option>
+					  </select>
+				  <div class="form-control-position">
+
+				  </div>
+			   </div>
+			  </div>
+
+
+                 <div class="form-group">
+			  <label  class="sr-only">Photo</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="file"  class="form-control input-shadow" name="newpic" required>
+				  <div class="form-control-position">
+					  <i class="icon-camera"></i>
+				  </div>
+			   </div>
+			  </div>
+
+                 <div class="form-group">
+			  <label  class="sr-only">Job</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newjob" placeholder="Job" required>
+				  <div class="form-control-position">
+					  <i class="fa fa-tasks"></i>
+				  </div>
+			   </div>
+			  </div>
+
+                 <div class="form-group">
+			  <label  class="sr-only">JobType</label>
+			   <div class="position-relative has-icon-right">
+				  <select   class="form-control input-shadow" name="newjobtype" placeholder="Enter Your Job Type" required>
+					  <option selected disabled="true" class="form-control input-shadow">Enter Your Job Type</option>
+					  <option value="individual">Individual</option>
+					  <option value="group">Group</option>
+					  </select>
+				  <div class="form-control-position">
+
+				  </div>
+			   </div>
+			  </div>
+
+
+                 <div class="form-group">
+			  <label  class="sr-only">Wage</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newwage" placeholder="Wages" required>
+				  <div class="form-control-position">
+					  <i class="fa fa-rupee"></i>
+				  </div>
+			   </div>
+			  </div>
+
+
+                 <div class="form-group">
+			  <label  class="sr-only">Address</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newaddress" placeholder="Address" required>
+				  <div class="form-control-position">
+					  <i class="icon-home"></i>
+				  </div>
+			   </div>
+			  </div>
+
+
+                 <div class="form-group">
+			  <label  class="sr-only">Username</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text"  class="form-control input-shadow" name="newusername" placeholder="UserName" required>
+				  <div class="form-control-position">
+					  <i class="fa fa-user-circle"></i>
+				  </div>
+			   </div>
+			  </div>
+
+
+                  <input type="submit" class="btn btn-secondary" value="Cancel" formaction="/empupdate">
+                                <input type="submit" class="btn btn-primary" value="Save Changes">
+		  </form>
+
+
+        </div>
+
+		  </div>
+		  <div class="card-footer text-center py-3">
+
+		  </div>
+	     </div>
+    
+     <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+	
+	<!--start color switcher-->
+   <div class="right-sidebar">
+    <div class="switcher-icon">
+      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
+    </div>
+    <div class="right-sidebar-content">
+
+      <p class="mb-0">Gaussion Texture</p>
+      <hr>
+      
+      <ul class="switcher">
+        <li id="theme1"></li>
+        <li id="theme2"></li>
+        <li id="theme3"></li>
+        <li id="theme4"></li>
+        <li id="theme5"></li>
+        <li id="theme6"></li>
+      </ul>
+
+      <p class="mb-0">Gradient Background</p>
+      <hr>
+      
+      <ul class="switcher">
+        <li id="theme7"></li>
+        <li id="theme8"></li>
+        <li id="theme9"></li>
+        <li id="theme10"></li>
+        <li id="theme11"></li>
+        <li id="theme12"></li>
+		<li id="theme13"></li>
+        <li id="theme14"></li>
+        <li id="theme15"></li>
+      </ul>
+      
+     </div>
+   </div>
+  <!--end color switcher-->
+	
+	</div><!--wrapper-->
+	
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static 'dashboard/assets/js/jquery.min.js' %}"></script>
+  <script src="{% static 'dashboard/assets/js/popper.min.js' %}"></script>
+  <script src="{% static 'dashboard/assets/js/bootstrap.min.js' %}"></script>
+	
+  <!-- sidebar-menu js -->
+  <script src="{% static 'dashboard/assets/js/sidebar-menu.js' %}"></script>
+  
+  <!-- Custom scripts -->
+  <script src="{% static 'dashboard/assets/js/app-script.js' %}"></script>
+  
+</body>
+</html>
+
+
